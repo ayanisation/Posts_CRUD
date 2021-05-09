@@ -3,9 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import { Container, IconButton } from "@material-ui/core";
-import { ExitToApp, SearchOutlined } from "@material-ui/icons";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { SearchOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,15 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Common(props) {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-  const logout = () => {
-    if (window.confirm("Are you sure you wish to Logout")) {
-      dispatch({ type: "LOGOUT" });
-      history.push("/");
-    }
-  };
   return (
     <>
       <Container maxWidth="lg" style={{ height: 30 }}>

@@ -5,13 +5,14 @@ import { useLocation } from "react-router";
 import Menus from "./Menus";
 import Common from "./Common";
 import Posts from "./Posts";
+import { getPosts } from "../actions/postAction";
 
 const User = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  // useEffect(() => {
-  //   dispatch(getPosts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
   let posts = useSelector((state) => state.posts);
   let title = "";
 

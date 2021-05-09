@@ -7,7 +7,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { Delete, MoreHoriz, ThumbUpAlt } from "@material-ui/icons";
+import { DeleteOutline, MoreHoriz, ThumbUpAlt } from "@material-ui/icons";
 import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
@@ -73,7 +73,7 @@ const useStyles = makeStyles({
   texts: { color: "#F2E9EA", marginTop: 5 },
 });
 
-const Post = ({ post, parent, username }) => {
+const Post = ({ post}) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -138,24 +138,23 @@ const Post = ({ post, parent, username }) => {
           </Typography>
         </div>
         <CardActions className={classes.cardActions}>
-          <div style={{ display: "flex" }}>
-            <Button size="small" color="primary" onClick={likeIt}>
-              {!post.liked ? (
-                <ThumbUpOutlinedIcon fontSize="small" />
-              ) : (
-                <ThumbUpAlt fontSize="small" />
-              )}
-            </Button>
-          </div>
-          <div style={{ display: "flex" }}>
-            <Button size="small" color="primary" onClick={dislikeIt}>
-              {!post.disliked ? (
-                <ThumbDownAltOutlinedIcon fontSize="small" />
-              ) : (
-                <ThumbDownAltIcon fontSize="small" />
-              )}
-            </Button>
-          </div>
+          <Button size="small" color="primary" onClick={likeIt}>
+            {!post.liked ? (
+              <ThumbUpOutlinedIcon fontSize="small" />
+            ) : (
+              <ThumbUpAlt fontSize="small" />
+            )}
+          </Button>
+          <Button size="small" color="primary" onClick={dislikeIt}>
+            {!post.disliked ? (
+              <ThumbDownAltOutlinedIcon fontSize="small" />
+            ) : (
+              <ThumbDownAltIcon fontSize="small" />
+            )}
+          </Button>
+          <Button size="small" color="primary" onClick={deleteIt}>
+            <DeleteOutline fontSize="small" />
+          </Button>
         </CardActions>
       </Card>
     </>

@@ -12,8 +12,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ThumbsUpDownIcon from "@material-ui/icons/ThumbsUpDown";
 import ThumbsUpDownOutlinedIcon from "@material-ui/icons/ThumbsUpDownOutlined";
 const useStyles = makeStyles(() => ({
